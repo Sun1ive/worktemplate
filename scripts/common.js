@@ -12,7 +12,7 @@ $(document).ready(() => {
   // Clock
   const date = new Date('29 September, 2017 02:15:32');
   const now = new Date();
-  const difference = date.getTime() / 1000 - now.getTime() / 1000;
+  const difference = (date.getTime() / 1000) - (now.getTime() / 1000);
   const clockEl = $('.clock');
 
   const clock = new FlipClock(clockEl, difference, {
@@ -24,8 +24,7 @@ $(document).ready(() => {
   $('body a').click(e => e.preventDefault());
 
   // scroll to anchor
-  $('a[href^="#"]').on('click', function() {
-    const target = this.hash;
+  $('a[href^="#"]').on('click', function () {
     const $target = $(target);
 
     $('html, body').animate(
@@ -65,7 +64,7 @@ $(document).ready(() => {
   });
 
   // submit
-  $('#form').submit(function (e) {
+  $('#form').on('submit', (e) => {
     e.preventDefault();
     const inputData = $(this);
     $.ajax({
