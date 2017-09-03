@@ -21,7 +21,7 @@ $(document).ready(() => {
     language: 'ru',
   });
 
-  $('body').click(e => e.preventDefault());
+  $('body a').click(e => e.preventDefault());
 
   // scroll to anchor
   $('a[href^="#"]').on('click', function() {
@@ -38,8 +38,8 @@ $(document).ready(() => {
   });
 
   // scroll to top
-  $(window).on('scroll', function() {
-    let offsetY = window.pageYOffset;
+  $(window).on('scroll', () => {
+    const offsetY = window.pageYOffset;
     if (offsetY >= 700) {
       $('.scrollTop').css({
         opacity: 1,
@@ -55,7 +55,7 @@ $(document).ready(() => {
     }
   });
 
-  $('.scrollTop').on('click', function() {
+  $('.scrollTop').on('click', () => {
     $('html, body').animate(
       {
         scrollTop: 0,
@@ -64,25 +64,16 @@ $(document).ready(() => {
     );
   });
 
-  // form submit
-  $('.submit-button').on('click', function() {
-    //  validation
-    if ($('.name').val() !== '' && $('.phone') !== '' && $('.email') !== '') {
-      const data = `${$('.name').val()} ${$('.phone').val()} ${$(
-        '.email',
-      ).val()}`;
-      $.ajax({
-        type: 'POST',
-        url: 'subMail.php',
-      })
-        .done(function() {
-          alert('thank you');
-        })
-        .fail(function() {
-          alert('error');
-        });
-    } else {
-      return false;
-    }
+  // submit
+  $('#form').submit(function (e) {
+    e.preventDefault();
+    const inputData = $(this);
+    $.ajax({
+      type: 'POST',
+      url: 'mail.php',
+      data: inputData.serialize(),
+    })
+      .done(() => alert('thank you'))
+      .fail(() => alert('error'));
   });
 });
