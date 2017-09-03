@@ -18,7 +18,7 @@
 <link rel="stylesheet" href="styles/style.min.css">
 </head>
 <body>
-
+<div id="wrapper">
 <header>
   <div class="first-header">
     <div class="first-header__logo">Logo img</div>
@@ -27,8 +27,8 @@
         <li><a href="#">Account</a></li>
         <li><a href="#">Wishlist</a></li>
         <li><a href="#">Checkout</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contacts</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contacts</a></li>
       </ul>  
     </nav>
   </div>
@@ -248,27 +248,34 @@
   <h1>Offer ends in</h1>
   <div class="clock"></div>
 </section>
-<section class="contact-form">
+<section class="contact-form" id="contact">
     <form class="form-container">
       <div class="form-title">
         <h2>Contact us</h2>
       </div>
       <div class="form-title">Name</div>
-      <input class="form-field" type="text" name="firstname"/><br/>
+      <input class="form-field name" type="text" name="firstname">
+        <br/>
       <div class="form-title">Phone</div>
-      <input class="form-field" type="text" name="phone" /><br/>
+      <input class="form-field phone" type="text" name="phone">
+        <br/>
       <div class="form-title">Email</div>
-      <input class="form-field" type="text" name="email" /><br />
+      <input class="form-field email" type="text" name="email">
+        <br/>
       <div class="submit-container">
       <input class="submit-button" type="submit" value="Submit" />
       </div>
     </form>
 </section>
-<section class="about">
+<section class="about" id="about">
   <h1>There will be some info about us</h1>
   <h1>maybe contacts or google map or whatever</h1>
 </section>
 </main>
+
+
+<div class="scrollTop"></div>
+
 
 <footer>
   <div class="first-footer">
@@ -308,7 +315,7 @@
   </div>
 </footer>
 
-
+</div>
 
 
 
@@ -317,6 +324,7 @@
 <script src="libs/jquery/jquery-3.2.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js"></script>
 <script src="libs/flip/flipclock.min.js"></script>
+<script src="libs/axios/axios.min.js"></script>
 <!-- <script src="dist/common.min.js"></script> -->
 <script src="scripts/common.js"></script>
 </body>

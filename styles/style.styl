@@ -8,6 +8,10 @@
 // code
 // ===================
 
+#wrapper
+  max-width: 1280px
+  margin 0 auto
+
 .first-header
   background-color: $lightblue
   font-family: "OpenSans-Bold"
@@ -113,7 +117,7 @@ main
 
 .offerNow
   background-image url('../img/bgoffer.jpg')
-  background-position -450px -750px
+  background-position -650px -750px
   display: flex
   align-items: center
   justify-content: center
@@ -216,6 +220,29 @@ main
   min-height: 300px
   background-color: #fff1f3
 
+
+.scrollTop
+  width 40px
+  height 40px
+  position fixed
+  right 25px
+  bottom -50px
+  background-color: #c0c0c0
+  cursor pointer
+  border-radius: 50%
+  border 1px solid rgba(0,0,0, .4)
+  box-shadow: 1px 1px 1px #000
+  transition .3s
+  z-index 555
+  &:after
+    content "\2191"
+    font-size: 20px
+    position absolute
+    font-weight: bold
+    top 15%
+    left 38%
+  &:hover
+    background-color: #c0c0c0 + 30%
 
 footer
   min-height: 400px
