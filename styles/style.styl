@@ -1,0 +1,67 @@
+//====================
+// import
+// ===================
+@import ("smart-grid.styl");
+@import ("settings.styl")
+
+//====================
+// code
+// ===================
+
+.first-header
+  background-color: $lightblue
+  font-family: "OpenSans-Bold"
+  min-height: 45px
+  display: flex
+  align-items: center
+  color #fff
+  &__menu
+    flex-basis: 60%
+    ul
+      display: flex
+      justify-content: space-around
+      li
+        position relative
+        padding: 10px 50px
+        &:hover
+          for x in 1 2 3 4
+            &:nth-child({x})
+              &:after
+                border-color #000
+          a
+            color #000
+        for x in 1 2 3 4
+          &:nth-child({x})
+            &:after
+              content ""
+              border-right 1px solid #fff
+              position absolute
+              height: 20px
+              right 0
+        a
+          color #fff
+  &__logo
+    flex-basis 40%
+    margin-left: 25px
+
+
+.second-header
+  background-color: #ffffff
+  min-height: 110px
+  color $darkGray
+  display: flex
+  text-transform uppercase
+  font-family: "OpenSans-Bold"
+  align-items: center
+  &__logo
+    flex-basis: 50%
+    font-size: 40px
+    margin-left: 150px
+  &__nav
+    flex-basis: 50%
+    ul
+      display: flex
+      justify-content: space-around
+      li
+        a
+          color $darkGray

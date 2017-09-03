@@ -1,0 +1,51 @@
+@font-face
+	font-family: "OpenSans-bold";
+	src: url("../fonts/OpenSans-Bold.woff2") format("woff2")
+
+@font-face
+	font-family: "OpenSans-Regular";
+	src: url("../fonts/OpenSans-Regular.woff2") format("woff2")
+
+@font-face
+	font-family: "FontAwesome";
+	src: url("../fonts/fontawesome-webfont.woff2") format("woff2")
+
+//====================
+// mixins
+// ===================
+font($size,$family,$weight,$color)
+	font-size $size
+	font-family $family
+	font-weight $weight
+	color: $color
+//====================
+// variables
+// ===================
+$lightblue = #4cb1ca
+$darkenblue = #39a0b9
+$footerblue = #0b4b5a
+$darkGray = #656565
+//====================
+// global
+// ===================
+[v-cloak]
+	display none
+
+body
+	padding 0
+	margin 0
+	background-image: url('../img/cork-wallet.png')
+	font-family: "OpenSans-Regular"
+
+	
+*
+	box-sizing: border-box
+
+a
+	text-decoration: none
+
+ul
+ol
+	list-style none
+	margin 0
+	padding 0
