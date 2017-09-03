@@ -71,8 +71,75 @@
   max-width: 1280px
   max-height: 720px
   margin 0 auto
-  transition .3s all
   .swiper-slide
     img
       width 100%
-      margin 0 auto
+
+main
+  min-height: 2000px
+  background-color: #ffffff
+  text-align: center
+  h1
+    margin 0
+    padding 50px 0
+    text-transform uppercase
+    color $darkGray
+  .items
+    row-flex()
+    col-12()
+    max-width: 1280px
+    margin 0 auto
+    text-align: center
+    .itemBox
+      col-3()
+      row-flex()
+      flex-flow: column wrap
+      border 1px solid #333
+      padding 10px 5px
+      margin: 20px 15px
+      position relative
+      cursor: pointer
+      .itemImg
+        overflow: hidden
+      .itemTitle
+        margin 20px 0
+        font-size: 16px
+        color $darkGray
+      .itemPrice
+        color $lemonGreen
+        font-size 20px
+        line-height: 22px
+        margin-bottom: 10px
+
+.offerNow
+  background-image url('../img/bgoffer.jpg')
+  background-position -450px -750px
+  display: flex
+  align-items: center
+  justify-content: center
+  flex-flow: column wrap
+  min-height: 250px
+  overflow hidden
+  h1
+    padding 5px
+    color #ffffff
+  h3
+    color #fff
+    text-transform uppercase
+    font-size: 25px
+    margin 0
+
+
+.discount
+  min-height: 200px
+  background-color: #fff1f3
+  display: flex
+  flex-flow: column wrap
+  align-items: center
+  h1
+    padding 25px
+
+.flip-clock-wrapper
+  display: flex
+  justify-content: center
+  margin 0
