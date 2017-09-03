@@ -15,11 +15,11 @@ $(document).ready(() => {
   const difference = (date.getTime() / 1000) - (now.getTime() / 1000);
   const clockEl = $('.clock');
 
-  const clock = new FlipClock (clockEl,difference, {
+  const clock = new FlipClock (clockEl, difference, {
     countdown: true,
     clockFace: 'DailyCounter',
     language: 'ru',
   });
 
-  $('.clock a').click(e => e.preventDefault());
+  $('body').click(e => e.preventDefault());
 });
