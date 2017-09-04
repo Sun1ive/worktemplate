@@ -1,4 +1,8 @@
 $(document).ready(() => {
+  // wow
+  const wow = new WOW();
+  wow.init();
+
   // Slider
   const slider = new Swiper('.swiper-container', {
     loop: true,
@@ -25,7 +29,7 @@ $(document).ready(() => {
 
   // scroll to anchor
   $('a[href^="#"]').on('click', function () {
-    const target = this.hash
+    const target = this.hash;
     const $target = $(target);
 
     $('html, body').animate(
