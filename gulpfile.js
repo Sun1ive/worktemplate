@@ -1,16 +1,16 @@
-const gulp = require('gulp'),
-			autoprefixer = require('gulp-autoprefixer'),
-			browserSync = require('browser-sync').create(),
-			rename = require('gulp-rename'),
-			gcmq = require('gulp-group-css-media-queries'),
-			cleanCSS = require('gulp-clean-css'),
-			plumber = require('gulp-plumber'),
-			stylus = require('gulp-stylus'),
-			uglify = require('gulp-uglify'),
-			babel = require('gulp-babel'),
-			imagemin = require('gulp-imagemin'),
-			htmlbeautify = require('gulp-html-beautify');
-			csso = require('gulp-csso');
+const gulp = require('gulp');
+const autoprefixer = require('gulp-autoprefixer');
+const browserSync = require('browser-sync').create();
+const rename = require('gulp-rename');
+const gcmq = require('gulp-group-css-media-queries');
+const cleanCSS = require('gulp-clean-css');
+const plumber = require('gulp-plumber');
+const stylus = require('gulp-stylus');
+const uglify = require('gulp-uglify');
+const babel = require('gulp-babel');
+const imagemin = require('gulp-imagemin');
+const htmlbeautify = require('gulp-html-beautify');
+const concat = require('gulp-concat');
 
 gulp.task('html', function() {
   var options = {
@@ -19,6 +19,12 @@ gulp.task('html', function() {
   return gulp
     .src('*.html')
     .pipe(htmlbeautify(options))
+    .pipe(gulp.dest('./dist'));
+});
+
+gulp.task('concat', function() {
+  return gulp.src(['./scripts/body.js', './scripts/common.js'])
+    .pipe(concat('all.js'))
     .pipe(gulp.dest('./dist'));
 });
 
@@ -49,18 +55,6 @@ gulp.task('stylus', function() {
     .pipe(browserSync.stream());
 });
 
-gulp.task('csso', function() {
-  return gulp
-    .src('./styles/*.css')
-    .pipe(
-      csso({
-        restructure: false,
-        sourceMap: true,
-        debug: true,
-      }),
-    )
-    .pipe(gulp.dest('./dist'));
-});
 
 gulp.task('watch', function() {
   gulp.watch('./styles/*.styl', ['stylus']);
@@ -87,7 +81,7 @@ gulp.task('uglify', function() {
 
 gulp.task('imagemin', function() {
   return gulp
-    .src('./_img/*')
+    .src('./img/*')
     .pipe(
       imagemin({
         interlaced: true,
@@ -95,5 +89,5 @@ gulp.task('imagemin', function() {
         optimizationLevel: 5,
       }),
     )
-    .pipe(gulp.dest('./_img/'));
+    .pipe(gulp.dest('./img/'));
 });

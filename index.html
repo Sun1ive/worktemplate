@@ -250,13 +250,15 @@
 </section>
 <section class="contact-form" id="contact">
     <form id="form">
-      <label for="" class="name">Your Name</label><br>
-      <input type="text" name="name" id="name" required><br>
-      <label for="" class="phone">Your phone number</label><br>
-      <input type="text" name="phone" id="phone" required><br>
-      <label for="" class="email">Your E-mail</label><br>
-      <input type="text" name="email" id="email" required><br>
-      <input type="submit" value="Submit">
+      <div class="formContainer">
+        <label for="" class="name">Your Name</label><br>
+        <input type="text" name="name" id="name" required><br>
+        <label for="" class="phone">Your phone number</label><br>
+        <input type="text" name="phone" id="phone" required><br>
+        <label for="" class="email">Your E-mail</label><br>
+        <input type="email" name="email" id="email" required><br>
+        <input type="submit" value="Submit" class="subButton">
+      </div>
     </form>
 </section>
 <section class="about" id="about">
@@ -316,8 +318,8 @@
 <script src="libs/jquery/jquery-3.2.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js"></script>
 <script src="libs/flip/flipclock.min.js"></script>
-<script src="libs/axios/axios.min.js"></script>
 <!-- <script src="dist/common.min.js"></script> -->
+<script src="scripts/body.js"></script>
 <script src="scripts/common.js"></script>
 </body>
 </html>

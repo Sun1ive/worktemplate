@@ -1,3 +1,9 @@
+'use strict';
+
+$(document).ready(() => {
+// some scripts  
+});
+
 $(document).ready(() => {
   // Slider
   const slider = new Swiper('.swiper-container', {

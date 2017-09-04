@@ -149,15 +149,44 @@ main
   margin 0 0 50px 0
 
 .contact-form
-  // background-color: #fff
   background-image url('http://www.wickedlyamazing.com/wp-content/uploads/2017/01/img-fashion.png')
   background-repeat no-repeat
   background-size: cover
   min-height: 450px
   display: flex
   align-items: center
-  
-
+  #form
+    border: 1px solid #f2e3d2;
+    background: #c9b7a2;
+    background: -webkit-gradient(linear, left top, left bottom, from(#f2e3d2), to(#c9b7a2));
+    min-height: 400px
+    min-width: 400px
+    border-radius 15px
+    margin 0 auto
+    .formContainer
+      margin-top 60px
+    input[type='text']
+    input[type='email']
+      padding 6px;
+      font-size: 18px
+      margin 7px 0
+      border-radius: 5px
+    .subButton
+      margin-top 15px
+      border: 1px solid #447314;
+      background: #6aa436;
+      background: -webkit-gradient(linear, left top, left bottom, from(#8dc059), to(#6aa436));
+      padding: 8.5px 25px;
+      cursor pointer
+      border-radius: 4px;
+      box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 1px 0;
+      &:hover
+        background: #6aa436 - 5%
+      &:active
+        text-shadow: #31540c 0 1px 0;
+        border: 1px solid #447314;
+        background: #8dc059;
+        background: -webkit-gradient(linear, left top, left bottom, from(#6aa436), to(#6aa436));
 
 .about
   min-height: 300px
